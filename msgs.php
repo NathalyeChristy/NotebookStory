@@ -33,11 +33,16 @@
 					case 'successLogin':
 						showSuccess('Logado com sucesso.');
 						break;
+					case 'successEdit':
+						showSuccess('Editado com sucesso.');
+						break;
+					case 'successDelete':
+						showSuccess('Deletado com sucesso.');
+						break;
 
 					case 'loginFirst':
 						showAlert('Você deve se logar primeiro.');
 						break;
-
 					default:
 						showAlert(urldecode($_GET['msg']));
 						break;

@@ -16,7 +16,7 @@
 
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-		<title>Ediatr Notebook</title>
+		<title>Editar Notebook</title>
 	</head>
 	<body class="container">
 
@@ -55,7 +55,7 @@
 					<input type="hidden" name="id" value="<?php echo $note['id'] ?>">
 
 					<div class="form-group">
-						<button type="submit" class="btn btn-warning">Ediar</button>
+						<button type="submit" class="btn btn-warning" name="btn_editar">Ediar</button>
 					</div>
 				</form>
 			</div>

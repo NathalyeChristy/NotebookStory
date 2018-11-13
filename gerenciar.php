@@ -52,7 +52,7 @@
 											<div class="col-md-2 offset-md-2 text-center pt-4">
 												<div class="btn-group-vertical btn-group-lg">
 													<a class="btn btn-warning" href="editar.php?id=<?php echo $notebook['id']; ?>">Editar</a>
-													<a class="btn btn-danger" href="deletar.php">Deletar</a>
+													<a class="btn btn-danger" href="deletar.php?id=<?php echo $notebook['id']; ?>">Deletar</a>
 												</div>
 											</div>
 										</div>

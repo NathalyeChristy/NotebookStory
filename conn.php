@@ -28,7 +28,7 @@
 
 		if (!$resultado)
 		{
-			throw new Exception('Houve um erro no instrução para o banco de dados.');
+			throw new Exception('Houve um erro na instrução para o banco de dados.');
 			return null;
 		}
 
@@ -58,4 +58,24 @@
 		}
 
 		return $dados;
+	}
+
+	function update($sql)
+	{
+		global $conn;
+
+		$resultado = doQuery($sql);
+
+		if (mysqli_affected_rows($conn) < 0)
+			throw new Exception('Nenhum dado pode ser atualizado.');
+	}
+
+	function delete($sql)
+	{
+		global $conn;
+
+		$resultado = doQuery($sql);
+
+		if (mysqli_affected_rows($conn) < 0)
+			throw new Exception('Nenhum dado pode ser excluido.');
 	}

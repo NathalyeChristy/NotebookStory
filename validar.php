@@ -1,4 +1,4 @@
-<?php
+<?php require 'lock.php';
 	if(empty($_POST['marca']) || empty($_POST['cor'])|| empty($_POST['ram'])||empty($_POST['processador'])|| empty($_POST['hd']))
 	{
 		//redireciona para a pagina de login com ms de erro
