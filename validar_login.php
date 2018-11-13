@@ -28,7 +28,7 @@
 
 		$_SESSION['nome'] = $user['nome'];
 
-		redirect('', 'index.php');
+		redirect('successLogin', 'index.php');
 	}
 	catch (Exception $exc)
 	{

@@ -9,6 +9,8 @@
 		
 		<?php include 'menu.php'; ?>
 
+		<?php include 'msgs.php'; ?>
+
 		<div class="row">
 			<div class="col">
 				<?php
