@@ -35,23 +35,27 @@
 		return $resultado;
 	}
 
-	function select($sql)
+	function selectOneRegister($sql)
 	{
 		global $conn;
 
 		$resultado = doQuery($sql);
 
-		// Se há mais de um resultado retorne todos em um array de array associativos.
-		if (mysqli_affected_rows($conn) > 1)
-		{
-			while ($linha = mysqli_fetch_assoc($resultado))
-			{
-				$dados[] = $linha;
-			}
+		return mysqli_fetch_assoc($resultado);
+	}
 
-			return $dados;
+	function selectAsArray($sql)
+	{
+		global $conn;
+
+		$resultado = doQuery($sql);
+
+		$dados = array();
+
+		while ($linha = mysqli_fetch_assoc($resultado))
+		{
+			$dados[] = $linha;
 		}
 
-		// Senão retorne apenas o array associativo.
-		return mysqli_fetch_assoc($resultado);
+		return $dados;
 	}

@@ -21,19 +21,20 @@
 						if (!empty($notebooks))
 						{
 							?>
-							<ul class="list-groud">
+							<ul class="list-group">
 								<?php
 
 								foreach ($notebooks as $notebook)
-								{ ?>
+								{ 
+									?>
 									<li class="list-group-item">
-										<a href="exibir.php?id=<?=$notebook['id']?>">
-											<h4><?=$notebook['marca']?></h4>
-											<p>
-												<b>Marca</b>: <?=$notebook['cor']?><br>
-												<b>Marca</b>: <?=$notebook['ram']?><br>
-												<b>Marca</b>: <?=$notebook['proc']?><br>
-												<b>Marca</b>: <?=$notebook['hd']?><br>
+										<a href="exibir.php?id=<?php echo $notebook['id']; ?>">
+											<h4><?php echo $notebook['marca']; ?></h4>
+											<p class="text-dark">
+												<b>Cor</b>: <?php echo $notebook['cor']; ?><br>
+												<b>Ram</b>: <?php echo $notebook['ram']; ?><br>
+												<b>Processador</b>: <?php echo $notebook['proc']; ?><br>
+												<b>HD</b>: <?php echo $notebook['hd']; ?><br>
 											</p>
 										</a>
 									</li>

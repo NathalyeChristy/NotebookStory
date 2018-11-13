@@ -5,5 +5,5 @@
 	{
 		$sql = "SELECT id, marca, cor, ram, proc, hd FROM tb_notes";
 
-		return select($sql);
+		return selectAsArray($sql);
 	}
