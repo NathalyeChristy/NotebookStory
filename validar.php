@@ -2,7 +2,7 @@
 	if(empty($_POST['marca']) || empty($_POST['cor'])|| empty($_POST['ram'])||empty($_POST['processador'])|| empty($_POST['hd']));
 	{
 		//redireciona para a pagina de login com ms de erro
-		header('location:login.php?msg-emptyFields');
+		header('location:cadastrar.php?msg-emptyFields');
 	}
 	else
 	{
@@ -13,24 +13,20 @@
 		$hd = $_POST['hd'];
 		include 'conn.php';
 		
+		$sql = "INSERT INTO tb_notes (marca, cor, ram, processador, hd) VALUES('$marca','$cor',$ram,$processador, $hd)"; 
 		
-		//$resultado = mysqli_query($conn, $sql);
+		$resultado = mysqli_query($conn, $sql);
 
-		//if()
-		//{
-		//	$login = mysqli_fetch_assoc($resultado);
-
-		//	session_start();
-		//	$_SESSION['usuario'] = $login['usuario'];
-		//	$_SESSION['senha']   = $login['senha'];
-
-		//	header('location:perfil.php');
-		//}
-		//else
-		//{
-		//	header('location:login.php?msg=loginError');
-		//}
-	//}
+		if(mysqli_affected_rows($conn) > 0)
+		{
+			
+			header('location:cadastro.php?msg=CadastradoSucesso');
+		}
+		else
+		{
+			header('location:login.php?msg=Erroaocadastrar');
+		}
+	}
 
 
 
